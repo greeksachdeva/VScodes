@@ -11,6 +11,8 @@
 		"utility": "cpp",
 		"valarray": "cpp",
 		"ratio": "cpp",
-		"iostream": "cpp"
+		"iostream": "cpp",
+		"any": "cpp",
+		"*.tcc": "cpp"
 	}
 }
