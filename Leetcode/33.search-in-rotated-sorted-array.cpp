@@ -8,30 +8,31 @@
 class Solution {
 public:
     int search(vector<int>& n, int tar) {
-        int l = 0, h = n.size() - 1;
+        int l, h;
+        l = 0, h = n.size() - 1;
         while(l<=h)
         {
-            int mid = (l+h)/2;
-            double c = n[mid];
-
-            if((n[mid]>=n[0]) && (tar>=n[0]) || (n[mid]<n[0]) && (tar<n[0]))
-            {
-                c = n[mid];
-            }
-            else
-            {
-                if(tar<n[0])
-                 c = -INFINITY;
+            int mid = (l + h) / 2;
+            if(n[mid]==tar)
+                {
+                    return mid;
+                }
+                else if(n[mid]>=n[0])
+                {
+                    if(tar<n[0] || tar>n[mid])
+                    {
+                        l = mid + 1;
+                    }
+                    else
+                        h = mid - 1;
+                }
                 else
-                c = INFINITY;
-            }
-
-            if(tar == c)
-                return mid;
-            if(tar>c)
-                l = mid + 1;
-            else
-                h = mid - 1;
+                {
+                    if(tar>=n[0] || tar<n[mid])
+                        h = mid-1;
+                    else
+                       l = mid+1;
+                }
         }
         return -1;
     }
