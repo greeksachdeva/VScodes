@@ -40,6 +40,7 @@ ll sol(string s,string x)
 }
 int main() {
     ios_base::sync_with_stdio(0);
+    ll t;
     cin >> t;
     while(t--)
     {

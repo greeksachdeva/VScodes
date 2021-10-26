@@ -23,23 +23,21 @@ int T, P, Q, R, X, Y, U, V, N,M;
 ll t, p, q, r, x, y, u, v, n, m,k;
 int main() {
     ios_base::sync_with_stdio(0);
-    cin >> n;
-    vecll vv(n+1);
-    vecll ind(100000);
-    fo1(i, n)
+    cin>>t;
+    while(t--)
     {
-        cin >> vv[i];
-        ind[vv[i]] = i;
+        cin >> n;
+        ll c0 = 0, c1 = 0;
+        fo(i,n)
+        {
+            cin >> x;
+            if(x==0)
+                c0++;
+                if(x==1)
+                    c1++;
         }
-    cin >> m;
-         ll v = 0, p = 0;
-        
-
-    while(m--)
-    {
-        cin >> x;
-        v += ind[x];
-        p += n - ind[x] + 1;
+        cout << (1LL << c0) * c1 << endl;
     }
-    cout << v << " " << p;
 }
+
+

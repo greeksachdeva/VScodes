@@ -7,7 +7,6 @@ using namespace std;
 #define S second
 #define tr(it, a) for(auto it = a.begin(); it != a.end(); it++)
 #define fo(i,n) for(ll i=0;i<n;i++)
-#define fo1(i,n) for(ll i=1;i<=n;i++)
 #define all(v) v.begin(), v.end()
 #define sortall(v) sort(all(v))
 #define sortalld(v) sort(all(v),greater<ll>())
@@ -23,23 +22,25 @@ int T, P, Q, R, X, Y, U, V, N,M;
 ll t, p, q, r, x, y, u, v, n, m,k;
 int main() {
     ios_base::sync_with_stdio(0);
-    cin >> n;
-    vecll vv(n+1);
-    vecll ind(100000);
-    fo1(i, n)
-    {
-        cin >> vv[i];
-        ind[vv[i]] = i;
-        }
-    cin >> m;
-         ll v = 0, p = 0;
-        
-
-    while(m--)
+    cin>>n;
+    ll c0 = 0, c5 = 0;
+    fo(i, n)
     {
         cin >> x;
-        v += ind[x];
-        p += n - ind[x] + 1;
+        if(x==0)
+            c0++;
+            else
+                c5++;
     }
-    cout << v << " " << p;
+    c5 = c5 / 9;
+    c5 *= 9;
+    if(c0==0)
+            cout << -1;
+    else if(c5==0)
+         cout<<0;
+            else
+            {
+                fo(i, c5) cout << 5;
+                fo(i, c0) cout << 0;
+            }
 }
