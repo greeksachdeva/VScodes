@@ -23,10 +23,13 @@ int T, P, Q, R, X, Y, U, V, N,M;
 ll t, p, q, r, x, y, u, v, n, m,k;
 int main() {
     ios_base::sync_with_stdio(0);
- 
-    
 
-    
+    cin >> n;
+    cout << n<<" ";
+    fo1(i,n-1)
+    {
+        cout << i << " ";
+    }
 }
 // string.find("xyz") !=string::npos  //if xyz is found
 
