@@ -22,24 +22,10 @@ int T, P, Q, R, X, Y, U, V, N,M;
 ll t, p, q, r, x, y, u, v, n, m,k;
 int main() {
     ios_base::sync_with_stdio(0);
-    cin >> n;
-    map<string, int> m;
-    while(n--)
-    {
-        string s;
-        cin >> s;
-        m[s]++;
-
-    }
-    x = 0;
-    string str;
-    for (auto it : m)
-    {
-       if(it.second>x)
-       {
-           x = it.second;
-           str = it.first;
-       }
-    }
-    cout << str;
+    string s;
+    cin >> s;
+    ll f = s.find("0000000");
+    ll ff = s.find("1111111");
+    if(f != string::npos || ff != string::npos) cout << "YES" << endl;
+    else cout << "NO" << endl;
 }
