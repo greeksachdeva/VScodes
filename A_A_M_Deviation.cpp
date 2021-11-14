@@ -20,27 +20,25 @@ typedef vector<pl>		vpl;
 const int mod = 1000000007;
 int pow(int base, int exp) {base %= mod;int result = 1;while (exp > 0) {if (exp & 1) result = ((ll)result * base) % mod;base = ((ll)base * base) % mod;exp >>= 1;}return result;}
 int T, P, Q, R, X, Y, U, V, N,M;
-ll t, p, q, r, x, y, u, v, n, m,k;
+ll t, p, q, r, x, y, u, v, n, m,k,b,c,a;
 int main() {
     ios_base::sync_with_stdio(0);
-    string s;
-    cin >> s;
-
-    string str = "hello";
-    ll j = 0;
-    ll cnt = 0;
-    for (int i = 0; i < s.size(); i++)
+    cin>>t;
+   
+    while (t--)
     {
-        if(s[i] == str[j]) {
-            j++;
-            cnt++;
+        cin >> a >> b >> c;
+        if(a+c == 2*b)
+            cout << 0 << endl;
+        else 
+        {
+            x = abs((a * 2) - (b + c))%3;
+            y = abs((b * 2) - (a + c))%3;
+            m = abs((c * 2) - (a + b))%3;
+            cout<<min({x,y,m})<<endl;
         }
-        if(cnt==5)
-            break;
     }
-    if(cnt==5)
-        cout << "YES";
-    else
-    cout<<"NO";
-    // string.find("xyz") !=string::npos  //if xyz is found
 }
+// string.find("xyz") !=string::npos  //if xyz is found
+
+

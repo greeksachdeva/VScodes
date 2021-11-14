@@ -23,24 +23,35 @@ int T, P, Q, R, X, Y, U, V, N,M;
 ll t, p, q, r, x, y, u, v, n, m,k;
 int main() {
     ios_base::sync_with_stdio(0);
-    string s;
-    cin >> s;
-
-    string str = "hello";
-    ll j = 0;
-    ll cnt = 0;
-    for (int i = 0; i < s.size(); i++)
+    cin >> t;
+    while(t--)
+    { 
+     string s;
+      cin>>n>>s;
+     ll cnt=0; 
+     string temp=s;
+     sort(temp.begin(), temp.end());
+     fo(i,n) cnt+= (s[i]-48);
+    vecll v;
+    fo(i,n)
     {
-        if(s[i] == str[j]) {
-            j++;
-            cnt++;
-        }
-        if(cnt==5)
-            break;
+        if(s[i]=='1' && i < n-cnt) v.pb(i+1);
+        if(s[i]=='0' && i>= n-cnt) v.pb(i+1);
     }
-    if(cnt==5)
-        cout << "YES";
-    else
-    cout<<"NO";
-    // string.find("xyz") !=string::npos  //if xyz is found
+
+    if(s==temp)
+    {
+        cout << "0\n";
+        continue;
+    }
+    cout << "1" << endl;
+    cout << v.size() << " ";
+
+    for (int i = 0; i < v.size(); i++)
+        cout << v[i] << " ";
+     cout << endl;
+    }
 }
+// string.find("xyz") !=string::npos  //if xyz is found
+
+
