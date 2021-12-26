@@ -13,6 +13,12 @@
 		"ratio": "cpp",
 		"iostream": "cpp",
 		"any": "cpp",
-		"*.tcc": "cpp"
+		"*.tcc": "cpp",
+		"deque": "cpp",
+		"list": "cpp",
+		"unordered_map": "cpp",
+		"unordered_set": "cpp",
+		"optional": "cpp",
+		"variant": "cpp"
 	}
 }
